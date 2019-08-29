@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhengbiao.springbootlearner.mapper.BasePlatformUserMapper">
+  <resultMap id="BaseResultMap" type="com.zhengbiao.springbootlearner.model.BasePlatformUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="user_no" jdbcType="VARCHAR" property="userNo" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="creater_id" jdbcType="VARCHAR" property="createrId" />
+    <result column="head_url" jdbcType="VARCHAR" property="headUrl" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_show" jdbcType="TINYINT" property="isShow" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="dr" jdbcType="TINYINT" property="dr" />
+  </resultMap>
+</mapper>
