@@ -1,9 +1,8 @@
 package com.zhengbiao.springbootlearner;
 
-import java.util.List;
-
-import net.minidev.json.JSONArray;
-
+import com.zhengbiao.springbootlearner.model.UserPropertiesModel;
+import com.zhengbiao.springbootlearner.rabbit.RabbitProducer;
+import com.zhengbiao.springbootlearner.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.Banner.Mode;
@@ -13,11 +12,6 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.zhengbiao.springbootlearner.mapper.UserMapper;
-import com.zhengbiao.springbootlearner.model.User;
-import com.zhengbiao.springbootlearner.model.UserPropertiesModel;
-import com.zhengbiao.springbootlearner.rabbit.RabbitProducer;
 
 @RestController
 @SpringBootApplication
@@ -36,7 +30,7 @@ public class SpringbootlearnerApplication {
 	private RabbitProducer rabbitProducer;
 	
 	@Autowired
-	private UserMapper userMapper;
+	private TestService testService;
 	
 	public static void main(String[] args) {
 		
@@ -59,9 +53,7 @@ public class SpringbootlearnerApplication {
 		rabbitProducer.sendMsg("rabbit-queue", "一个来自rabbit的消息");
 		
 		//查询数据
-		List<User> users = userMapper.findAll();
-		System.out.println(JSONArray.toJSONString(users));
-		
+    testService.test1();
 		
 		return "hello spring boot";
 	}
